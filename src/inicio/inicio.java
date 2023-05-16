@@ -47,7 +47,7 @@ public class inicio extends JFrame {
 		setLocationRelativeTo(null);
 		getContentPane().setLayout(null);
 		
-		JLabel lblInicio = new JLabel("Lista de  juegos nuevo 199 45820 : ");
+		JLabel lblInicio = new JLabel("Lista de  juegos nuevo 199: ");
 		lblInicio.setFont(new Font("Tahoma", Font.ITALIC, 20));
 		lblInicio.setBounds(43, 21, 187, 30);
 		contentPane.add(lblInicio);
