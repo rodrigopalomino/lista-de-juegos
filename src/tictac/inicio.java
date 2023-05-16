@@ -17,6 +17,7 @@ public class inicio extends JFrame {
 	private JPanel contentPane;
 	private JButton btn1jugador;
 	private JButton btn2jugador;
+	public tictac_2jugadores tictac2jugadores = new tictac_2jugadores();
 
 
 	public inicio() {
@@ -49,7 +50,6 @@ public class inicio extends JFrame {
 	}
 
 	protected void btn2jugadores_mouseClicked() {
-		tictac_2jugadores tictac2jugadores = new tictac_2jugadores();
 		this.setVisible(false);
 		tictac2jugadores.setVisible(true);
 		

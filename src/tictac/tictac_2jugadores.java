@@ -7,6 +7,9 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import inicio.inicio;
+
 import javax.swing.JLabel;
 
 public class tictac_2jugadores extends JFrame {
@@ -20,6 +23,11 @@ public class tictac_2jugadores extends JFrame {
 	boolean player1;
 	int cont;
 	private JLabel lblPlayer;
+	private JButton btnReset;
+	private JButton btnCerrar;
+	private JLabel lblTurno;
+	private JButton btnRegresar;
+	inicio inicio = new inicio();
 
 
 	public tictac_2jugadores() {
@@ -41,16 +49,37 @@ public class tictac_2jugadores extends JFrame {
 		lblNewLabel.setBounds(74, 29, 46, 14);
 		contentPane.add(lblNewLabel);
 		
-		JLabel lblTurno = new JLabel("turno");
+		lblTurno = new JLabel("turno");
 		lblTurno.setBounds(387, 85, 46, 14);
 		contentPane.add(lblTurno);
 		
 		lblPlayer = new JLabel("Player 1");
 		lblPlayer.setBounds(387, 163, 46, 14);
 		contentPane.add(lblPlayer);
+		
+		btnReset = new JButton("reset");
+		btnReset.setBounds(303, 250, 89, 23);
+		btnReset.setVisible(false);
+		contentPane.add(btnReset);
+		
+		btnCerrar = new JButton("cerrar");
+		btnCerrar.setBounds(414, 250, 89, 23);
+		btnCerrar.setVisible(false);
+		contentPane.add(btnCerrar);
+		
+		btnRegresar = new JButton("regresar");
+		btnRegresar.setBounds(358, 298, 89, 23);
+		contentPane.add(btnRegresar);
+		
 		player1=true;
 		botones = new JButton[3][3];
 		cont=0;
+		
+		btnCerrar.addMouseListener(new MouseAdapter() {
+			@Override public void mouseClicked(MouseEvent e) { btnCerrar_mouseClicked(); }});
+		
+		btnRegresar.addMouseListener(new MouseAdapter() {
+			@Override public void mouseClicked(MouseEvent e) { btnRegresar_mouseClicked(); }});
 		
 		for( int i=0; i<3; i++ ) {
 			for( int y=0; y<3; y++ ) {
@@ -68,6 +97,18 @@ public class tictac_2jugadores extends JFrame {
 		
 	}
 
+
+
+	protected void btnRegresar_mouseClicked() {
+		inicio.setVisible(true);
+		this.setVisible(false);
+		
+	}
+
+
+	protected void btnCerrar_mouseClicked() {
+		System.exit(0);
+	}
 
 
 	protected void btn_mouseClicked(JButton btn, int i, int y) {
@@ -88,7 +129,16 @@ public class tictac_2jugadores extends JFrame {
 	    }
 
 	    if(verificarGanador(i, y)) {
-        	JOptionPane.showMessageDialog(this, (player1) ? "player2" : "player1" + " ha ganado!");
+	    	
+	    	if( lblPlayer.getText().equals("Player 1") ){
+	    		lblPlayer.setText("Player 2");
+	    	}
+	    	if( lblPlayer.getText().equals("Player 2") ){
+	    		lblPlayer.setText("Player 1");
+	    	}
+        	lblTurno.setText("Ganador");
+        	btnCerrar.setVisible(true);
+        	btnReset.setVisible(true);
 	    }
 	    else if(cont==9) {
 	    	JOptionPane.showMessageDialog(this,"Empate");
