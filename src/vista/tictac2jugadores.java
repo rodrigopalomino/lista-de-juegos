@@ -1,4 +1,4 @@
-package tictac;
+package vista;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -8,29 +8,32 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import inicio.inicio;
+import controlador.coordinador;
+import modelo.funcionesTictac2jugadores;
 
 import javax.swing.JLabel;
 
-public class tictac_2jugadores extends JFrame {
+public class tictac2jugadores extends JFrame {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private JPanel contentPane;
-	JButton[][] botones;
-	boolean player1;
-	int cont;
-	private JLabel lblPlayer;
-	private JButton btnReset;
-	private JButton btnCerrar;
-	private JLabel lblTurno;
-	private JButton btnRegresar;
+	public JPanel contentPane;
+	public JButton[][] botones;
+	public boolean player1;
+	public int cont;
+	public JLabel lblPlayer;
+	public JButton btnReset;
+	public JButton btnCerrar;
+	public JLabel lblTurno;
+	public JButton btnRegresar;
+	coordinador miCoordinador;
 	inicio inicio = new inicio();
+	funcionesTictac2jugadores funcion = new funcionesTictac2jugadores();
 
 
-	public tictac_2jugadores() {
+	public tictac2jugadores() {
 		
 		iniciarComponentes();
 		
@@ -105,8 +108,10 @@ public class tictac_2jugadores extends JFrame {
 
 
 	protected void btnReset_mouseClicked() {
+		
 		cont = 0;
 		player1=true;
+		
 		lblTurno.setText("Turno");
 		for( int i=0; i<3; i++ ) {
 			for( int y=0; y<3; y++) {
@@ -198,5 +203,11 @@ public class tictac_2jugadores extends JFrame {
             }
         
 		return false;
+	}
+
+
+	public void setCoordinador(coordinador miCoordinador) {
+		this.miCoordinador=miCoordinador;
+		
 	}
 }

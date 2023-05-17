@@ -1,10 +1,9 @@
-package inicio;
-
-import java.awt.EventQueue;
+package vista;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import controlador.coordinador;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JButton;
@@ -18,26 +17,9 @@ public class inicio extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
+	coordinador miCoordinador;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					inicio frame = new inicio();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the frame.
-	 */
+	
 	public inicio() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -65,11 +47,17 @@ public class inicio extends JFrame {
 		
 	}
 
-	protected void btn_3enRaya() {
-		tictac.inicio tictac = new tictac.inicio();
-		this.setVisible(false);
-		tictac.setVisible(true);
+	public void setCoordinador(coordinador miCoordinador) {
+		this.miCoordinador=miCoordinador;
 	}
+	
+	protected void btn_3enRaya() {
+		miCoordinador.setvisibleInicioTicTac();
+		
+
+	}
+
+	
 }
 
 
