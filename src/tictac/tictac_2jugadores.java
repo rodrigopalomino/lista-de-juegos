@@ -58,6 +58,8 @@ public class tictac_2jugadores extends JFrame {
 		contentPane.add(lblPlayer);
 		
 		btnReset = new JButton("reset");
+		btnReset.addMouseListener(new MouseAdapter() {
+			@Override public void mouseClicked(MouseEvent e) {}});
 		btnReset.setBounds(303, 250, 89, 23);
 		btnReset.setVisible(false);
 		contentPane.add(btnReset);
@@ -81,6 +83,9 @@ public class tictac_2jugadores extends JFrame {
 		btnRegresar.addMouseListener(new MouseAdapter() {
 			@Override public void mouseClicked(MouseEvent e) { btnRegresar_mouseClicked(); }});
 		
+		btnReset.addMouseListener(new MouseAdapter() {
+			@Override public void mouseClicked(MouseEvent e) { btnReset_mouseClicked(); }});
+		
 		for( int i=0; i<3; i++ ) {
 			for( int y=0; y<3; y++ ) {
 				final int finalI = i;
@@ -97,6 +102,19 @@ public class tictac_2jugadores extends JFrame {
 		
 	}
 
+
+
+	protected void btnReset_mouseClicked() {
+		cont = 0;
+		player1=true;
+		lblTurno.setText("Turno");
+		for( int i=0; i<3; i++ ) {
+			for( int y=0; y<3; y++) {
+				botones[i][y].setText("");
+			}
+		}
+		
+	}
 
 
 	protected void btnRegresar_mouseClicked() {
