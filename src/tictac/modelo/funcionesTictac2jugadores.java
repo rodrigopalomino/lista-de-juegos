@@ -1,6 +1,6 @@
-package modelo;
+package tictac.modelo;
 
-import controlador.coordinador;
+import tictac.controlador.coordinador;
 
 public class funcionesTictac2jugadores {
 	

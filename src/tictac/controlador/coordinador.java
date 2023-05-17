@@ -1,15 +1,17 @@
-package controlador;
+package tictac.controlador;
 
-import modelo.funcionesTictac2jugadores;
-import vista.inicio;
-import vista.inicioTictac;
-import vista.tictac2jugadores;
+import javax.swing.JFrame;
+
+import tictac.modelo.funcionesTictac2jugadores;
+import tictac.vista.inicio;
+import tictac.vista.inicioTictac;
+import tictac.vista.tictac2jugadores;
 
 public class coordinador {
-	
+	//para inicio, inicioTictac
 	private inicio inicio;
 	private inicioTictac inicioTictac;
-	private tictac2jugadores ticTac2jugadores;
+	public tictac2jugadores ticTac2jugadores;
 	
 	private funcionesTictac2jugadores funcionesTictac2jugadores;
 	
@@ -44,4 +46,41 @@ public class coordinador {
 		
 	}
 
+	public void setVisibleTicTac2Jugadores() {
+		ticTac2jugadores.setVisible(true);
+		
+	}
+
+	public void setvisible( JFrame jframe, Boolean visible ) {
+		jframe.setVisible(visible);
+		
+	}
+	
+	public JFrame setTicTac2jugadoresvisible() {
+		return ticTac2jugadores;
+		
+	}
+
+	public JFrame setInicioTictacVisible() {
+		// TODO Auto-generated method stub
+		return inicioTictac;
+	}
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,4 +1,4 @@
-package vista;
+package tictac.vista;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -8,8 +8,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import controlador.coordinador;
-import modelo.funcionesTictac2jugadores;
+import tictac.controlador.coordinador;
+import tictac.modelo.funcionesTictac2jugadores;
 
 import javax.swing.JLabel;
 
@@ -89,6 +89,8 @@ public class tictac2jugadores extends JFrame {
 		btnReset.addMouseListener(new MouseAdapter() {
 			@Override public void mouseClicked(MouseEvent e) { btnReset_mouseClicked(); }});
 		
+		
+		
 		for( int i=0; i<3; i++ ) {
 			for( int y=0; y<3; y++ ) {
 				final int finalI = i;
@@ -108,6 +110,7 @@ public class tictac2jugadores extends JFrame {
 
 
 	protected void btnReset_mouseClicked() {
+		
 		
 		cont = 0;
 		player1=true;

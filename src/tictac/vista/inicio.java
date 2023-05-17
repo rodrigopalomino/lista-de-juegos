@@ -1,9 +1,11 @@
-package vista;
+package tictac.vista;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import controlador.coordinador;
+
+import tictac.controlador.coordinador;
+
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JButton;
@@ -52,7 +54,8 @@ public class inicio extends JFrame {
 	}
 	
 	protected void btn_3enRaya() {
-		miCoordinador.setvisibleInicioTicTac();
+		miCoordinador.setvisible( miCoordinador.setInicioTictacVisible() , true);
+		this.setVisible(false);
 		
 
 	}

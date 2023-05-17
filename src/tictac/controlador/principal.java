@@ -1,9 +1,9 @@
-package controlador;
+package tictac.controlador;
 
-import modelo.funcionesTictac2jugadores;
-import vista.inicio;
-import vista.inicioTictac;
-import vista.tictac2jugadores;
+import tictac.modelo.funcionesTictac2jugadores;
+import tictac.vista.inicio;
+import tictac.vista.inicioTictac;
+import tictac.vista.tictac2jugadores;
 
 public class principal {
 
