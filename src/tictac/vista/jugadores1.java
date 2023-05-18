@@ -8,11 +8,12 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import tictac.modelo.funciones1jugador;
 import tictac.modelo.funciones2jugadores;
 
 import javax.swing.JLabel;
 
-public class jugadores2 extends JFrame {
+public class jugadores1 extends JFrame {
 
 	/**
 	 * 
@@ -23,10 +24,10 @@ public class jugadores2 extends JFrame {
 	public JButton btnCerrar;
 	public JLabel lblTurno;
 	public JButton btnRegresar;
-	funciones2jugadores miCoordinador2;
+	funciones1jugador miCoordinador1;
 
 
-	public jugadores2() {
+	public jugadores1() {
 		
 		iniciarComponentes();
 		
@@ -41,11 +42,11 @@ public class jugadores2 extends JFrame {
 		setContentPane(contentPane);
 		getContentPane().setLayout(null);
 		
-		miCoordinador2 = new funciones2jugadores();
-		miCoordinador2.setJugadores2(this);
-		miCoordinador2.generarBotones();
+		miCoordinador1 = new funciones1jugador();
+		miCoordinador1.setJugadores1(this);
+		miCoordinador1.generarBotones();
 		
-		JLabel lblNewLabel = new JLabel("tictac");
+		JLabel lblNewLabel = new JLabel("1 tictac ");
 		lblNewLabel.setBounds(74, 29, 46, 14);
 		contentPane.add(lblNewLabel);
 		
@@ -75,11 +76,11 @@ public class jugadores2 extends JFrame {
 		}
 	
 	protected void btnRegresar_mouseClicked() {
-		miCoordinador2.regresar();
+		miCoordinador1.regresar();
 	}
 
 
-	public void setCoordinador2(funciones2jugadores miCoordinador2) {
-		this.miCoordinador2=miCoordinador2;
+	public void setCoordinador1(funciones1jugador miCoordinador1) {
+		this.miCoordinador1=miCoordinador1;
 	}
 }

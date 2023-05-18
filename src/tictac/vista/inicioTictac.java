@@ -4,7 +4,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import tictac.modelo.coordinador;
+import tictac.modelo.funciones1jugador;
+import tictac.modelo.funciones2jugadores;
 
 import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
@@ -17,7 +18,8 @@ public class inicioTictac extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	coordinador miCoordinador;
+	funciones2jugadores miCoordinador2;
+	funciones1jugador miCoordinador1;
 
 	/**
 	 * Launch the application.
@@ -40,19 +42,36 @@ public class inicioTictac extends JFrame {
 		btn2jugadores.setBounds(41, 110, 89, 23);
 		contentPane.add(btn2jugadores);
 		
+		JButton btn1jugadores = new JButton("1 jugadores");
+		btn1jugadores.setBounds(151, 110, 89, 23);
+		contentPane.add(btn1jugadores);
+		
 		btn2jugadores.addMouseListener(new MouseAdapter() {
 			@Override public void mouseClicked(MouseEvent e) { btn2jugadores_mouseClicked(); }});
+		
+		btn1jugadores.addMouseListener(new MouseAdapter() {
+			@Override public void mouseClicked(MouseEvent e) { btn1jugadores_mouseClicked(); }});
+	}
+
+	protected void btn1jugadores_mouseClicked() {
+		miCoordinador1.setvisible(  miCoordinador1.getJugadores1() , true );
+		this.setVisible(false);
 		
 	}
 
 	protected void btn2jugadores_mouseClicked() {
-		miCoordinador.setvisible(  miCoordinador.getJugadores2() , true );
+		miCoordinador2.setvisible(  miCoordinador2.getJugadores2() , true );
 		this.setVisible(false);
 		
 		
 	}
 
-	public void setCoordinador(coordinador miCoordinador) {
-		this.miCoordinador=miCoordinador;	
+	public void setCoordinador2(funciones2jugadores miCoordinador2) {
+		this.miCoordinador2=miCoordinador2;	
+	}
+
+	public void setCoordinador1(funciones1jugador miCoordinador1) {
+		this.miCoordinador1=miCoordinador1;
+		
 	}
 }

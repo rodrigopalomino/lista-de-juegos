@@ -4,10 +4,13 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+
+import inicio.inicio;
+import tictac.controlador.principal;
 import tictac.vista.inicioTictac;
 import tictac.vista.jugadores2;
 	
-	public class coordinador {
+	public class funciones2jugadores {
 		
 
 		//iniciando variables
@@ -16,6 +19,7 @@ import tictac.vista.jugadores2;
 		private int cont;
 		private boolean player1 = true;
 		JButton[][] botones;
+		JButton btnReset;
 		
 		
 		
@@ -40,7 +44,6 @@ import tictac.vista.jugadores2;
 		}
 	
 		public jugadores2 getJugadores2() {
-			
 			return jugadores2;
 			
 		}	
@@ -71,13 +74,17 @@ import tictac.vista.jugadores2;
 					getJugadores2().getContentPane().add(btn);
 				}
 			}
-	
 			
+			btnReset = new JButton("reset");
+			btnReset.setBounds(303, 250, 89, 23);
+			//btnReset.setVisible(false);
+			getJugadores2().getContentPane().add(btnReset);
+			btnReset.addMouseListener(new MouseAdapter() {
+				@Override public void mouseClicked(MouseEvent e) { reiniciar(); }});
+	
+	
 		}
 		
-		public void reiniciar(int i, int y) {
-
-	    }
 
 		protected void btn_mouseClicked(JButton btn, int i, int y) {
 			
@@ -107,7 +114,7 @@ import tictac.vista.jugadores2;
 				
 				getJugadores2().lblTurno.setText("Ganador");
 				getJugadores2().btnCerrar.setVisible(true);
-				getJugadores2().btnReset.setVisible(true);
+				btnReset.setVisible(true);
 			}else if (cont==9) {
 				getJugadores2().lblTurno.setText("empate");
 				
@@ -151,6 +158,25 @@ import tictac.vista.jugadores2;
 			return false;
 		}
 
+		public void reiniciar() {
+			for (int i = 0; i < 3; i++) {
+				for (int y = 0; y < 3; y++) {
+					botones[i][y].setText("");
+				}
+			}
+			cont = 0;
+			player1 = true;
+			getJugadores2().lblTurno.setText("");
+
+		}
+
+		public void regresar() {
+			getJugadores2().setVisible(false);
+			inicio inicio = new inicio();
+			inicio.setVisible(true);
+			
+		}
+
 
 
 		
@@ -163,7 +189,7 @@ import tictac.vista.jugadores2;
 		
 		
 	
-	}//fin
+	}
 	
 	
 	

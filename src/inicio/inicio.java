@@ -1,3 +1,4 @@
+package inicio;
 
 
 import javax.swing.JFrame;
@@ -5,7 +6,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import tictac.controlador.principal;
-import tictac.modelo.coordinador;
+import tictac.modelo.funciones2jugadores;
 
 import javax.swing.JLabel;
 
@@ -22,7 +23,7 @@ public class inicio extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	coordinador miCoordinador;
+	funciones2jugadores miCoordinador;
 	
 	
 	public static void main(String[] args) {
@@ -65,7 +66,7 @@ public class inicio extends JFrame {
 		
 	}
 
-	public void setCoordinador(coordinador miCoordinador) {
+	public void setCoordinador(funciones2jugadores miCoordinador) {
 		this.miCoordinador=miCoordinador;
 	}
 	
