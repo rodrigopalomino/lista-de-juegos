@@ -1,12 +1,15 @@
-package tictac.vista;
+
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import tictac.controlador.coordinador;
+import tictac.controlador.principal;
+import tictac.modelo.coordinador;
 
 import javax.swing.JLabel;
+
+import java.awt.EventQueue;
 import java.awt.Font;
 import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
@@ -20,7 +23,20 @@ public class inicio extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	coordinador miCoordinador;
-
+	
+	
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					inicio frame = new inicio();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
 	
 	public inicio() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -54,7 +70,8 @@ public class inicio extends JFrame {
 	}
 	
 	protected void btn_3enRaya() {
-		miCoordinador.setvisible( miCoordinador.setInicioTictacVisible() , true);
+		principal miPricipal = new principal();
+		miPricipal.iniciar();
 		this.setVisible(false);
 		
 

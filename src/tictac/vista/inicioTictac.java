@@ -4,7 +4,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import tictac.controlador.coordinador;
+import tictac.modelo.coordinador;
 
 import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
@@ -46,7 +46,7 @@ public class inicioTictac extends JFrame {
 	}
 
 	protected void btn2jugadores_mouseClicked() {
-		miCoordinador.setvisible(  miCoordinador.setTicTac2jugadoresvisible() , true );
+		miCoordinador.setvisible(  miCoordinador.getJugadores2() , true );
 		this.setVisible(false);
 		
 		

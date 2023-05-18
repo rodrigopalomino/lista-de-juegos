@@ -1,9 +1,8 @@
 package tictac.controlador;
 
-import tictac.modelo.funcionesTictac2jugadores;
-import tictac.vista.inicio;
+import tictac.modelo.coordinador;
 import tictac.vista.inicioTictac;
-import tictac.vista.tictac2jugadores;
+import tictac.vista.jugadores2;
 
 public class principal {
 
@@ -13,30 +12,23 @@ public class principal {
 
 	}
 
-	private void iniciar() {
+	public void iniciar() {
 		
 		//instancio de clases
-		inicio inicio = new inicio();
 		inicioTictac inicioTictac = new inicioTictac();
-		tictac2jugadores ticTac2jugadores = new tictac2jugadores();
-		
-		funcionesTictac2jugadores funcionesTictac2jugadores = new funcionesTictac2jugadores();
-		
+		jugadores2 jugadores2 = new jugadores2();
 		coordinador miCoordinador = new coordinador();
 		
 		//relaciones entre clases
-		inicio.setCoordinador(miCoordinador);
 		inicioTictac.setCoordinador(miCoordinador);
-		ticTac2jugadores.setCoordinador(miCoordinador);
-		funcionesTictac2jugadores.setCoordinador(miCoordinador);
+		jugadores2.setCoordinador(miCoordinador);
 		
 		//relaciones a miCoordinador
-		miCoordinador.setInicio(inicio);
 		miCoordinador.setInicioTicTac(inicioTictac);
-		miCoordinador.setTicTac2Jugadores(ticTac2jugadores);
-		miCoordinador.setFuncionesTicTac2Jugadores(funcionesTictac2jugadores);
+		miCoordinador.setJugadores2(jugadores2);
+
 		
-		miCoordinador.mostrarVentanaPrincipal();		
+		miCoordinador.setvisible(inicioTictac, true);	
 	}
 	
 }
