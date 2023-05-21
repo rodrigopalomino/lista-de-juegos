@@ -6,6 +6,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import tictac.controlador.principal;
+import tictac.modelo.funciones1jugador;
 import tictac.modelo.funciones2jugadores;
 
 import javax.swing.JLabel;
@@ -23,7 +24,8 @@ public class inicio extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	funciones2jugadores miCoordinador;
+	funciones2jugadores miCoordinador2;
+	private funciones1jugador miCoordinador1;
 	
 	
 	public static void main(String[] args) {
@@ -48,7 +50,7 @@ public class inicio extends JFrame {
 		setLocationRelativeTo(null);
 		getContentPane().setLayout(null);
 		
-		JLabel lblInicio = new JLabel("Lista de  juegos nuevo 199: ");
+		JLabel lblInicio = new JLabel("Lista de  juegos");
 		lblInicio.setFont(new Font("Tahoma", Font.ITALIC, 20));
 		lblInicio.setBounds(43, 21, 187, 30);
 		contentPane.add(lblInicio);
@@ -66,8 +68,8 @@ public class inicio extends JFrame {
 		
 	}
 
-	public void setCoordinador(funciones2jugadores miCoordinador) {
-		this.miCoordinador=miCoordinador;
+	public void setCoordinador(funciones2jugadores miCoordinador2) {
+		this.miCoordinador2=miCoordinador2;
 	}
 	
 	protected void btn_3enRaya() {
@@ -76,6 +78,12 @@ public class inicio extends JFrame {
 		this.setVisible(false);
 		
 
+	}
+	
+	//tictac
+	public void setCoordinador1(funciones1jugador miCoordinador1) {
+		this.miCoordinador1 = miCoordinador1;
+		
 	}
 
 	

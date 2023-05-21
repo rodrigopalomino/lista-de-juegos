@@ -1,5 +1,6 @@
 package tictac.controlador;
 
+import inicio.inicio;
 import tictac.modelo.funciones1jugador;
 import tictac.modelo.funciones2jugadores;
 import tictac.vista.inicioTictac;
@@ -16,11 +17,17 @@ public class principal {
 
 	public void iniciar() {
 		
-		//instancio de clases
+		//inicio
+		inicio inicio = new inicio();
+		
+		//inicio del juego
 		inicioTictac inicioTictac = new inicioTictac();
+		
+		
 		jugadores2 jugadores2 = new jugadores2();
-		jugadores1 jugadores1 = new jugadores1();
 		funciones2jugadores miCoordinador2 = new funciones2jugadores();
+		
+		jugadores1 jugadores1 = new jugadores1();
 		funciones1jugador miCoordinador1 = new funciones1jugador();
 		
 		//relaciones entre clases
@@ -30,6 +37,7 @@ public class principal {
 		jugadores2.setCoordinador2(miCoordinador2);
 		jugadores1.setCoordinador1(miCoordinador1);
 		
+		inicio.setCoordinador1(miCoordinador1);
 		
 		
 		//relaciones para juego de 2
@@ -39,6 +47,7 @@ public class principal {
 		//relaciones para juego de 1
 		miCoordinador1.setInicioTicTac(inicioTictac);
 		miCoordinador1.setJugadores1(jugadores1);
+		miCoordinador1.setInicio(inicio);
 
 		
 		miCoordinador2.setvisible(inicioTictac, true);	

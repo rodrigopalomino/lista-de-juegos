@@ -16,17 +16,25 @@ public class funciones1jugador {
 
 	private inicioTictac inicioTictac;
 	private jugadores1 jugadores1;
-	//iniciando variables
+	private inicio inicio;
+	
 	private int cont;
 	private boolean player1 = true;
 	boolean game_over=false;
 	JButton[][] botones;
 	JButton btnReset;
 
+
+	
 	public void setInicioTicTac(inicioTictac inicioTictac) {
 		this.inicioTictac=inicioTictac;
 		
 	}
+	
+	public inicioTictac getInicioTictac(inicioTictac inicioTictac) {
+		return inicioTictac;
+	}
+	
 
 	public void setJugadores1(jugadores1 jugadores1) {
 		this.jugadores1=jugadores1;
@@ -37,6 +45,16 @@ public class funciones1jugador {
 		return jugadores1;
 	}
 	
+	public void setInicio(inicio inicio) {
+		this.inicio=inicio;
+		
+	}
+	
+	public inicio getInicio(inicio inicio) {
+		return inicio;
+	}
+	
+
 	public void setvisible( JFrame jframe, Boolean visible ) {
 		jframe.setVisible(visible);
 		
@@ -56,13 +74,13 @@ public class funciones1jugador {
 				btn.addMouseListener(new MouseAdapter() {
 					@Override public void mouseClicked(MouseEvent e) { 
 						btn_mouseClicked(btn, finalI, finalY); }});
-				btn.setBounds( (i+1)*70, (y+1)*70,50,50);
+				btn.setBounds( (i+1)*70, ((y+1)*70)+30,50,50);
 				getJugadores1().getContentPane().add(btn);
 			}
 		}
 		
 		btnReset = new JButton("reset");
-		btnReset.setBounds(303, 250, 89, 23);
+		btnReset.setBounds(300, 230, 90, 25);
 		getJugadores1().getContentPane().add(btnReset);
 		btnReset.addMouseListener(new MouseAdapter() {
 			@Override public void mouseClicked(MouseEvent e) { reiniciar(); }});
@@ -206,13 +224,11 @@ public class funciones1jugador {
 	}
 
 	public void regresar() {
-		getJugadores1().setVisible(false);
-		inicio inicio = new inicio();
-		inicio.setVisible(true);
+		//falta aca
+		//getInicio
 		
 	}
 
-	
 	
 
 }

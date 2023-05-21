@@ -12,6 +12,7 @@ import tictac.modelo.funciones1jugador;
 import tictac.modelo.funciones2jugadores;
 
 import javax.swing.JLabel;
+import java.awt.Font;
 
 public class jugadores1 extends JFrame {
 
@@ -36,7 +37,7 @@ public class jugadores1 extends JFrame {
 
 	private void iniciarComponentes() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 566, 401);
+		setBounds(100, 100, 560, 380);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -46,9 +47,10 @@ public class jugadores1 extends JFrame {
 		miCoordinador1.setJugadores1(this);
 		miCoordinador1.generarBotones();
 		
-		JLabel lblNewLabel = new JLabel("1 tictac ");
-		lblNewLabel.setBounds(74, 29, 46, 14);
-		contentPane.add(lblNewLabel);
+		JLabel lblTitulo = new JLabel("Tictac Toe");
+		lblTitulo.setFont(new Font("Tahoma", Font.PLAIN, 26));
+		lblTitulo.setBounds(105, 30, 140, 45);
+		contentPane.add(lblTitulo);
 		
 		lblTurno = new JLabel("turno");
 		lblTurno.setBounds(387, 85, 46, 14);
@@ -60,12 +62,11 @@ public class jugadores1 extends JFrame {
 
 		
 		btnCerrar = new JButton("cerrar");
-		btnCerrar.setBounds(414, 250, 89, 23);
+		btnCerrar.setBounds(415, 230, 90, 25);
 		contentPane.add(btnCerrar);
 		
 		btnRegresar = new JButton("regresar");
-		
-		btnRegresar.setBounds(358, 298, 89, 23);
+		btnRegresar.setBounds(360, 270, 90, 25);
 		contentPane.add(btnRegresar);
 	
 		btnCerrar.addMouseListener(new MouseAdapter() {

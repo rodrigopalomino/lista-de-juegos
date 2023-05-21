@@ -8,8 +8,11 @@ import tictac.modelo.funciones1jugador;
 import tictac.modelo.funciones2jugadores;
 
 import javax.swing.JButton;
+
+import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import javax.swing.JLabel;
 
 public class inicioTictac extends JFrame {
 
@@ -31,26 +34,44 @@ public class inicioTictac extends JFrame {
 	 */
 	public inicioTictac() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 320, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		setLocationRelativeTo(null);
 		getContentPane().setLayout(null);
 		
-		JButton btn2jugadores = new JButton("2 jugadores");
-		btn2jugadores.setBounds(41, 110, 89, 23);
+		JLabel lblTitulo = new JLabel("Tictac Toe");
+		lblTitulo.setFont(new Font("Tahoma", Font.PLAIN, 26));
+		lblTitulo.setBounds(85, 30, 140, 45);
+		contentPane.add(lblTitulo);
+		
+		JButton btn2jugadores = new JButton("2 player");
+		btn2jugadores.setBounds(100, 145, 90, 23);
 		contentPane.add(btn2jugadores);
 		
-		JButton btn1jugadores = new JButton("1 jugadores");
-		btn1jugadores.setBounds(151, 110, 89, 23);
+		JButton btn1jugadores = new JButton("1 player");
+		btn1jugadores.setBounds(100, 110, 90, 23);
 		contentPane.add(btn1jugadores);
+		
+		JButton btnRegresar = new JButton("regresar");
+		btnRegresar.setBounds(100, 180, 90, 23);
+		contentPane.add(btnRegresar);
 		
 		btn2jugadores.addMouseListener(new MouseAdapter() {
 			@Override public void mouseClicked(MouseEvent e) { btn2jugadores_mouseClicked(); }});
 		
 		btn1jugadores.addMouseListener(new MouseAdapter() {
 			@Override public void mouseClicked(MouseEvent e) { btn1jugadores_mouseClicked(); }});
+		
+		btnRegresar.addMouseListener(new MouseAdapter() {
+			@Override public void mouseClicked(MouseEvent e) { btnRegresar_mouseClicked(); }});
+	}
+
+	protected void btnRegresar_mouseClicked() {
+		miCoordinador1.setvisible( miCoordinador1.getInicio(), true);
+		this.setVisible(false);
+		
 	}
 
 	protected void btn1jugadores_mouseClicked() {

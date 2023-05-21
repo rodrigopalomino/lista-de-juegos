@@ -70,13 +70,13 @@ import tictac.vista.jugadores2;
 					btn.addMouseListener(new MouseAdapter() {
 						@Override public void mouseClicked(MouseEvent e) { 
 							btn_mouseClicked(btn, finalI, finalY); }});
-					btn.setBounds( (i+1)*70, (y+1)*70,50,50);
+					btn.setBounds( (i+1)*70, ((y+1)*70)+30,50,50);
 					getJugadores2().getContentPane().add(btn);
 				}
 			}
 			
 			btnReset = new JButton("reset");
-			btnReset.setBounds(303, 250, 89, 23);
+			btnReset.setBounds(300, 230, 90, 25);
 			//btnReset.setVisible(false);
 			getJugadores2().getContentPane().add(btnReset);
 			btnReset.addMouseListener(new MouseAdapter() {
